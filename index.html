@@ -10,207 +10,224 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="cursor"></div>
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="#intro" class="nav-link">Introduction</a>
-            <a href="#visualizations" class="nav-link">Visualizations</a>
-            <a href="#analysis" class="nav-link">Analysis</a>
-            <a href="#reflection" class="nav-link">Reflection</a>
+    <!-- Intro Animation -->
+    <div class="intro-overlay">
+        <div class="intro-content-wrapper">
+            <h1 class="intro-title">The Power of Perspective</h1>
         </div>
-    </nav>
+    </div>
 
-    <section id="intro" class="full-screen">
-        <div class="intro-content">
-            <h1 class="reveal-text">The Power of Perspective</h1>
-            <p class="reveal-text">How data visualization shapes our understanding of complex issues</p>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll to explore</span>
-            <div class="arrow"></div>
-        </div>
-    </section>
-
-    <section id="context" class="content-section">
-        <div class="section-content">
-            <h2>The Challenge</h2>
-            <p>Data visualization is often perceived as an objective medium for presenting facts. However, the choices we make in how we present data can significantly influence how viewers interpret and remember information.</p>
-            
-            <p>In today's data-driven world, we often hear the phrase "data doesn't lie." While raw data itself may be objective, the way we choose to present it can dramatically shape the narrative. As data scientists, we possess the tools and techniques to frame data in ways that can support different, sometimes opposing, perspectives. This power comes with significant responsibility.</p>
-
-            <p>The art of data visualization lies not just in making data readable, but in making it persuasive. Through careful selection of visual elements, color schemes, annotations, and even the subset of data we choose to highlight, we can guide viewers toward specific conclusions. This raises important questions about the line between effective communication and potential manipulation.</p>
-
-            <p>To demonstrate this dual nature of data visualization, we've chosen to work with a powerful dataset: the NYPD Civilian Complaints Database, containing 33,358 allegations made by civilians against police officers. This dataset, rich in demographic information and contextual details, allows us to explore a sensitive and socially relevant topic: the relationship between race and police force complaints.</p>
-
-            <p>Our challenge centers around a specific proposition: <em>"Black New Yorkers: Primary Targets of NYPD Force Across All Officer Demographics."</em> Using the same underlying data, we will create two distinct visualizations—one supporting and one opposing this claim. Through this exercise, we'll explore how design choices in data visualization can:</p>
-
-            <ul class="challenge-points">
-                <li>Shape viewer perception and interpretation</li>
-                <li>Emphasize certain patterns while downplaying others</li>
-                <li>Create emotional resonance through visual rhetoric</li>
-                <li>Guide viewers toward specific conclusions</li>
-            </ul>
-
-            <p>Beyond just showcasing these techniques, we'll analyze the ethical implications of our design decisions. Each visualization will be accompanied by a detailed breakdown of its persuasive elements, scoring them on a scale from deceptive to earnest. This transparency allows us to better understand the fine line between effective data storytelling and potential misrepresentation.</p>
-        </div>
-    </section>
-
-    <section id="visualization1" class="content-section visualization-section">
-        <div class="section-content">
-            <h2>Visualization 1: Supporting the Proposition</h2>
-            <div class="viz-container">
-                <div class="viz-frame">
-                    <iframe src="black_civilians_force_sankey.html" frameborder="0"></iframe>
-                </div>
-                <div class="viz-analysis">
-                    <h3>Analysis & Design Decisions</h3>
-                    <p class="analysis-intro">This Sankey diagram is crafted to emphasize the disproportionate targeting of Black civilians across all officer demographics. Through specific design choices, the visualization guides viewers toward recognizing patterns of racial disparity in force complaints. The power of this visualization lies in its ability to show the flow of complaints across different demographic groups, revealing stark patterns in police-civilian interactions.</p>
-                    
-                    <div class="design-decisions">
-                        <h4>Key Design Elements</h4>
-                        <div class="decision-card">
-                            <div class="decision-header">
-                                <span class="decision-title">Flow Visualization Highlighting</span>
-                                <span class="decision-score positive">+0.5</span>
-                            </div>
-                            <p>The Sankey diagram displays relationships between officer and civilian ethnicities in force complaints. Dark red flows with high opacity (0.8) target Black civilians, while other flows use light gray with low opacity (0.2). This stark visual contrast emphasizes complaints against Black civilians. While this highlights a real pattern, the dramatic color difference guides viewers toward specific conclusions about targeting across all officer demographics.</p>
-                        </div>
-
-                        <div class="decision-card">
-                            <div class="decision-header">
-                                <span class="decision-title">Title Framing</span>
-                                <span class="decision-score negative">-1.0</span>
-                            </div>
-                            <p>The title makes a conclusive statement rather than asking a question or using neutral language. By declaring "Black New Yorkers: Primary Targets of NYPD Force Across All Officer Demographics," it primes viewers to interpret the data through this specific lens before examining the visualization. The use of emotionally charged language ("Primary Targets") suggests intentionality rather than simply reporting statistical patterns.</p>
-                        </div>
-
-                        <div class="decision-card">
-                            <div class="decision-header">
-                                <span class="decision-title">Statistical Highlighting</span>
-                                <span class="decision-score negative">-1.5</span>
-                            </div>
-                            <p>The annotation emphasizes that "Black Civilians account for an overwhelming 61.8% of force complaints while other civilian ethnicities only account for 38.2%." This binary comparison amplifies the disparity by grouping all other ethnicities together. The word "overwhelming" is evaluative rather than neutral, and the comparison lacks crucial context about NYC's demographic makeup, where Black civilians constitute about 24% of the population.</p>
-                        </div>
-
-                        <div class="decision-card">
-                            <div class="decision-header">
-                                <span class="decision-title">Color Scheme</span>
-                                <span class="decision-score neutral">0</span>
-                            </div>
-                            <p>The color scheme associates flows targeting Black civilians with red, traditionally linked to danger or warning signals. While this aligns with common visualization practices for distinguishing groups, the implementation subtly reinforces the narrative of targeting through emotional color associations and a warm background that heightens the contrast.</p>
-                        </div>
-
-                        <div class="decision-card">
-                            <div class="decision-header">
-                                <span class="decision-title">Context Omission</span>
-                                <span class="decision-score negative">-2.0</span>
-                            </div>
-                            <p>The visualization focuses solely on raw complaint numbers, omitting crucial contextual factors like neighborhood demographics, crime rates, police deployment patterns, and the nature of interactions leading to complaints. This simplification implies a direct causal relationship between officer demographics and targeting of Black civilians, when the reality likely involves multiple complex, interacting factors.</p>
-                        </div>
-                    </div>
-                </div>
+    <!-- Main Content -->
+    <div id="main-content" class="content-hidden">
+        <div class="cursor"></div>
+        <nav class="navbar">
+            <div class="nav-content">
+                <a href="#intro" class="nav-link">Introduction</a>
+                <a href="#visualization1" class="nav-link">Visualization 1</a>
+                <a href="#visualization2" class="nav-link">Visualization 2</a>
+                <a href="#reflection" class="nav-link">Reflection</a>
             </div>
-        </div>
-    </section>
+        </nav>
 
-    <section id="visualization2" class="content-section visualization-section">
-        <div class="section-content">
-            <h2>Visualization 2: Opposing the Proposition</h2>
-            <div class="viz-container">
-                <div class="viz-frame">
-                    <iframe src="force_complaint_substantiation_rates_horizontal.html" frameborder="0"></iframe>
-                </div>
-                <div class="viz-analysis">
-                    <h3>Analysis & Design Decisions</h3>
-                    <p class="analysis-intro">This horizontal bar chart shifts the narrative focus from complaint volume to substantiation rates, presenting a counter-argument to the original proposition. By emphasizing the outcome of complaints rather than their frequency, the visualization suggests a different interpretation of the data. This reframing raises questions about the relationship between complaint volumes and their ultimate resolution through official channels.</p>
-                    
-                    <div class="design-decisions">
-                        <div class="decision-card">
-                            <div class="decision-header">
-                                <span class="decision-title">Strategic Color Coding</span>
-                                <span class="decision-score negative">-1.0</span>
-                            </div>
-                            <p>The visualization uses green for the bar representing Black civilians (below average substantiation rate) and red for other ethnicities (above average rate). This inverts typical color associations, where green suggests positive/good and red negative/bad. The color choice subtly implies that the lower substantiation rate for Black civilians is somehow positive or desirable, undermining the implication of unfair targeting.</p>
-                        </div>
-
-                        <div class="decision-card">
-                            <div class="decision-header">
-                                <span class="decision-title">Data Orientation</span>
-                                <span class="decision-score positive">+1.5</span>
-                            </div>
-                            <p>The horizontal layout with sorted data (ascending) places Black civilians at the bottom with the lowest rate. This arrangement provides a clear visual ranking that accurately represents the relationships in the data. The horizontal orientation facilitates easy reading of labels and precise comparison of values across ethnic groups, supporting fair assessment of the substantiation rates.</p>
-                        </div>
-
-                        <div class="decision-card">
-                            <div class="decision-header">
-                                <span class="decision-title">Credibility Annotation</span>
-                                <span class="decision-score negative">-2.0</span>
-                            </div>
-                            <p>The annotation stating "claims are not supported by official review boards" makes a causal inference beyond what the data shows. While the visualization displays substantiation rates, it doesn't measure credibility directly. This framing shifts focus from potential systemic bias to questioning complainant credibility, suggesting complaints are less valid rather than considering potential biases in the review process itself.</p>
-                        </div>
-
-                        <div class="decision-card">
-                            <div class="decision-header">
-                                <span class="decision-title">Average Reference Line</span>
-                                <span class="decision-score positive">+2.0</span>
-                            </div>
-                            <p>A dashed line showing the average substantiation rate (12.5%) provides a crucial reference point for comparing group rates. This element helps viewers accurately assess which groups are above or below average and by how much, enabling fair and precise comparison of the relative differences in substantiation rates across ethnicities.</p>
-                        </div>
-
-                        <div class="decision-card">
-                            <div class="decision-header">
-                                <span class="decision-title">Percentage Labels</span>
-                                <span class="decision-score positive">+1.0</span>
-                            </div>
-                            <p>Clear percentage labels are placed inside each bar with consistent font size, enabling direct numerical comparisons. This transparent presentation of exact values allows viewers to make their own informed assessments about the magnitude of differences rather than relying solely on visual estimation or potentially misleading bar lengths.</p>
-                        </div>
-                    </div>
-                </div>
+        <section id="intro" class="full-screen">
+            <div class="intro-content">
+                <h1 class="reveal-text">The Power of Perspective</h1>
+                <p class="reveal-text">How data visualization shapes our understanding of complex issues</p>
             </div>
-        </div>
-    </section>
+            <div class="scroll-indicator">
+                <span>Scroll to explore</span>
+                <div class="arrow"></div>
+            </div>
+        </section>
 
-    <section id="reflection" class="content-section">
-        <div class="section-content">
-            <h2>Final Reflection</h2>
-            <div class="reflection-content">
-                <p>Creating these two visualizations revealed the fine line between persuasion and deception in data visualization. What made this process particularly challenging was working with the same underlying data to argue contradictory positions. To do this effectively, I had to carefully manipulate design choices like color, annotations, titles, and which relationships to emphasize or downplay.</p>
+        <section id="context" class="content-section">
+            <div class="section-content">
+                <h2>The Challenge</h2>
+                <p>Data visualization is often perceived as an objective medium for presenting facts. However, the choices we make in how we present data can significantly influence how viewers interpret and remember information.</p>
                 
-                <p>I found that the most powerful persuasive techniques were often subtle. The framing provided by titles and annotations had tremendous influence in guiding interpretation, as did selective emphasis of certain patterns while downplaying others. In the first visualization, highlighting the flows to Black civilians created a clear visual story about targeting. In the second, using a horizontal bar chart with strategic color coding reframed the narrative to question complainant credibility rather than police bias.</p>
+                <p>In today's data-driven world, we often hear the phrase "data doesn't lie." While raw data itself may be objective, the way we choose to present it can dramatically shape the narrative. As data scientists, we possess the tools and techniques to frame data in ways that can support different, sometimes opposing, perspectives. This power comes with significant responsibility.</p>
 
-                <h3>Ethical Framework for Data Visualization</h3>
-                <p>Through this exercise, I've developed a deeper understanding of what constitutes "ethical analysis and visualization." An ethical approach to data visualization should:</p>
-                <ol>
-                    <li>Accurately represent statistical relationships without distortion</li>
-                    <li>Provide appropriate context for interpretation, including relevant demographic or historical data</li>
-                    <li>Avoid language that presupposes conclusions or makes unwarranted causal claims</li>
-                    <li>Acknowledge limitations in what the data can tell us about causality</li>
-                    <li>Enable viewers to form their own conclusions by presenting complete information</li>
-                    <li>Balance the need for engaging visualization with the responsibility to represent data honestly</li>
-                </ol>
+                <p>The art of data visualization lies not just in making data readable, but in making it persuasive. Through careful selection of visual elements, color schemes, annotations, and even the subset of data we choose to highlight, we can guide viewers toward specific conclusions. This raises important questions about the line between effective communication and potential manipulation.</p>
 
-                <h3>The Ethics of Persuasion</h3>
-                <p>The boundary between acceptable persuasion and misleading representation seems to revolve around viewer agency - whether viewers are guided to a conclusion while retaining their ability to evaluate evidence, or whether key contextual information is omitted to prevent alternative interpretations. Techniques like selective emphasis (e.g., highlighting certain flows in the Sankey diagram) can be acceptable if the underlying data remains accurately represented. However, techniques that make causal claims beyond what the data supports (like the annotation in the second visualization suggesting complaints are "less credible") cross into misleading territory.</p>
+                <p>To demonstrate this dual nature of data visualization, we've chosen to work with a powerful dataset: the NYPD Civilian Complaints Database, containing 33,358 allegations made by civilians against police officers. This dataset, rich in demographic information and contextual details, allows us to explore a sensitive and socially relevant topic: the relationship between race and police force complaints.</p>
 
-                <h3>Power and Responsibility</h3>
-                <p>This exercise demonstrates that the same data can tell dramatically different stories depending on design and framing choices. This power demands responsibility from visualization creators to:</p>
-                <ul>
-                    <li>Present data honestly, even while making persuasive arguments</li>
-                    <li>Include necessary context that might challenge our preferred narrative</li>
-                    <li>Acknowledge the limitations and potential biases in our data and analysis</li>
-                    <li>Consider the real-world implications of how our visualizations might influence decision-making</li>
-                    <li>Empower viewers with the information they need to draw their own conclusions</li>
+                <p>Our challenge centers around a specific proposition: <em>"Black New Yorkers: Primary Targets of NYPD Force Across All Officer Demographics."</em> Using the same underlying data, we will create two distinct visualizations – one supporting and one opposing this claim. Through this exercise, we'll explore how design choices in data visualization can:</p>
+
+                <ul class="challenge-points">
+                    <li>Shape viewer perception and interpretation</li>
+                    <li>Emphasize certain patterns while downplaying others</li>
+                    <li>Create emotional resonance through visual rhetoric</li>
+                    <li>Guide viewers toward specific conclusions</li>
                 </ul>
 
-                <p>In conclusion, while both visualizations show true statistics, neither fully meets these criteria for ethical presentation. The experience of creating them has reinforced that effective data visualization isn't just about technical skill or aesthetic appeal - it's about finding the balance between engaging presentation and ethical responsibility. As data professionals, we must constantly reflect on how our design choices shape understanding and influence decisions, especially when dealing with socially significant issues like those explored in this project.</p>
+                <p>Beyond just showcasing these techniques, we'll analyze the ethical implications of our design decisions. Each visualization will be accompanied by a detailed breakdown of its persuasive elements, scoring them on a scale from deceptive to earnest. This transparency allows us to better understand the fine line between effective data storytelling and potential misrepresentation.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <p>© 2024 Data Visualization Project</p>
-    </footer>
+        <section id="visualization1" class="content-section visualization-section">
+            <div class="section-content">
+                <h2>Visualization 1: Supporting the Proposition</h2>
+                <div class="viz-container">
+                    <div class="viz-frame">
+                        <iframe src="black_civilians_force_sankey.html" frameborder="0"></iframe>
+                    </div>
+                    <div class="viz-analysis">
+                        <h3>Analysis & Design Decisions</h3>
+                        <p class="analysis-intro">This Sankey diagram is crafted to emphasize the disproportionate targeting of Black civilians across all officer demographics. Through specific design choices, the visualization guides viewers toward recognizing patterns of racial disparity in force complaints. The power of this visualization lies in its ability to show the flow of complaints across different demographic groups, revealing stark patterns in police-civilian interactions.</p>
+                        
+                        <div class="design-decisions">
+                            <h4>Key Design Elements</h4>
+                            <div class="decision-card">
+                                <div class="decision-header">
+                                    <span class="decision-title">Flow Visualization Highlighting</span>
+                                    <span class="decision-score positive">+1.5</span>
+                                </div>
+                                <p>The Sankey diagram displays relationships between officer and civilian ethnicities in force complaints. Dark red flows with high opacity (0.8) target Black civilians, while other flows use light gray with low opacity (0.2). This stark visual contrast emphasizes complaints against Black civilians. While this highlights a real pattern, the dramatic color difference guides viewers toward specific conclusions about targeting across all officer demographics.</p>
+                            </div>
 
+                            <div class="decision-card">
+                                <div class="decision-header">
+                                    <span class="decision-title">Title Framing</span>
+                                    <span class="decision-score negative">-1.0</span>
+                                </div>
+                                <p>The title makes a conclusive statement rather than asking a question or using neutral language. By declaring "Black New Yorkers: Primary Targets of NYPD Force Across All Officer Demographics," it primes viewers to interpret the data through this specific lens before examining the visualization. The use of emotionally charged language ("Primary Targets") suggests intentionality rather than simply reporting statistical patterns.</p>
+                            </div>
+
+                            <div class="decision-card">
+                                <div class="decision-header">
+                                    <span class="decision-title">Statistical Highlighting</span>
+                                    <span class="decision-score negative">-0.5</span>
+                                </div>
+                                <p>The annotation emphasizes that "Black Civilians account for an overwhelming 61.8% of force complaints while other civilian ethnicities only account for 38.2%." This binary comparison amplifies the disparity by grouping all other ethnicities together. The word "overwhelming" is evaluative rather than neutral, and the comparison lacks crucial context about NYC's demographic makeup, where Black civilians constitute about 24% of the population.</p>
+                            </div>
+
+                            <div class="decision-card">
+                                <div class="decision-header">
+                                    <span class="decision-title">Color Scheme</span>
+                                    <span class="decision-score positive">1.0</span>
+                                </div>
+                                <p>The color scheme associates flows targeting Black civilians with red, traditionally linked to danger or warning signals. While this aligns with common visualization practices for distinguishing groups, the implementation subtly reinforces the narrative of targeting through emotional color associations and a warm background that heightens the contrast.</p>
+                            </div>
+
+                            <div class="decision-card">
+                                <div class="decision-header">
+                                    <span class="decision-title">Data Transformation Quality</span>
+                                    <span class="decision-score positive">+2.0</span>
+                                </div>
+                                <p>The visualization demonstrates sophisticated data transformation, converting raw complaint records into meaningful relationship flows between officer and civilian demographics. The proportional sizing of flows precisely corresponds to actual complaint volumes, creating an honest representation of the underlying data. By maintaining exact numerical relationships while making complex patterns visually interpretable, the visualization achieves the difficult balance of simplification without distortion. This transformation allows viewers to comprehend thousands of individual complaint records through a single coherent visual structure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="visualization2" class="content-section visualization-section">
+            <div class="section-content">
+                <h2>Visualization 2: Opposing the Proposition</h2>
+                <div class="viz-container">
+                    <div class="viz-frame">
+                        <iframe src="force_complaint_substantiation_rates_horizontal.html" frameborder="0"></iframe>
+                    </div>
+                    <div class="viz-analysis">
+                        <h3>Analysis & Design Decisions</h3>
+                        <p class="analysis-intro">This horizontal bar chart shifts the narrative focus from complaint volume to substantiation rates, presenting a counter-argument to the original proposition. By emphasizing the outcome of complaints rather than their frequency, the visualization suggests a different interpretation of the data. This reframing raises questions about the relationship between complaint volumes and their ultimate resolution through official channels.</p>
+                        
+                        <div class="design-decisions">
+                            <div class="decision-card">
+                                <div class="decision-header">
+                                    <span class="decision-title"> Color Scheme </span>
+                                    <span class="decision-score positive">+1.0</span>
+                                </div>
+                                <p>The visualization uses a consistent neutral gray for most bars while using a distinct dark red exclusively for the Black civilians' bar. This color strategy intentionally draws the viewer's attention to the specific data point central to the analysis - that Black civilians have the lowest substantiation rate. Rather than using color to suggest value judgments about all data points, this approach highlights the key comparison point while maintaining visual integrity. The emphasis helps viewers immediately identify the focal point of the visualization's message without using misleading color associations that might bias interpretation of the data's significance. This design choice effectively balances persuasive highlighting with factual representation.</p>
+                            </div>
+
+                            <div class="decision-card">
+                                <div class="decision-header">
+                                    <span class="decision-title">Data Orientation</span>
+                                    <span class="decision-score positive">+1.5</span>
+                                </div>
+                                <p>The horizontal layout with sorted data (ascending) places Black civilians at the bottom with the lowest rate. This arrangement provides a clear visual ranking that accurately represents the relationships in the data. The horizontal orientation facilitates easy reading of labels and precise comparison of values across ethnic groups, supporting fair assessment of the substantiation rates.</p>
+                            </div>
+
+                            <div class="decision-card">
+                                <div class="decision-header">
+                                    <span class="decision-title">Credibility Annotation</span>
+                                    <span class="decision-score negative">-1.0</span>
+                                </div>
+                                <p>The annotation stating "claims are not supported by official review boards" makes a causal inference beyond what the data shows. While the visualization displays substantiation rates, it doesn't measure credibility directly. This framing shifts focus from potential systemic bias to questioning complainant credibility, suggesting complaints are less valid rather than considering potential biases in the review process itself.</p>
+                            </div>
+
+                            <div class="decision-card">
+                                <div class="decision-header">
+                                    <span class="decision-title">Average Reference Line</span>
+                                    <span class="decision-score positive">+2.0</span>
+                                </div>
+                                <p>A dashed line showing the average substantiation rate (12.5%) provides a crucial reference point for comparing group rates. This element helps viewers accurately assess which groups are above or below average and by how much, enabling fair and precise comparison of the relative differences in substantiation rates across ethnicities.</p>
+                            </div>
+
+                            <div class="decision-card">
+                                <div class="decision-header">
+                                    <span class="decision-title">Percentage Labels</span>
+                                    <span class="decision-score positive">+1.0</span>
+                                </div>
+                                <p>Clear percentage labels are placed inside each bar with consistent font size, enabling direct numerical comparisons. This transparent presentation of exact values allows viewers to make their own informed assessments about the magnitude of differences rather than relying solely on visual estimation or potentially misleading bar lengths.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reflection" class="content-section">
+            <div class="section-content">
+                <h2>Final Reflection</h2>
+                <div class="reflection-content">
+                    <p>Creating these two visualizations revealed the fine line between persuasion and deception in data visualization. What made this process particularly challenging was working with the same underlying data to argue contradictory positions. To do this effectively, I had to carefully manipulate design choices like color, annotations, titles, and which relationships to emphasize or downplay.</p>
+                    
+                    <p>I found that the most powerful persuasive techniques were often subtle. The framing provided by titles and annotations had tremendous influence in guiding interpretation, as did selective emphasis of certain patterns while downplaying others. In the first visualization, highlighting the flows to Black civilians created a clear visual story about targeting. In the second, using a horizontal bar chart with strategic color coding reframed the narrative to question complainant credibility rather than police bias.</p>
+
+                    <h3>Ethical Framework for Data Visualization</h3>
+                    <p>Through this exercise, I've developed a deeper understanding of what constitutes "ethical analysis and visualization." An ethical approach to data visualization should:</p>
+                    <ol>
+                        <li>Accurately represent statistical relationships without distortion</li>
+                        <li>Provide appropriate context for interpretation, including relevant demographic or historical data</li>
+                        <li>Avoid language that presupposes conclusions or makes unwarranted causal claims</li>
+                        <li>Acknowledge limitations in what the data can tell us about causality</li>
+                        <li>Enable viewers to form their own conclusions by presenting complete information</li>
+                        <li>Balance the need for engaging visualization with the responsibility to represent data honestly</li>
+                    </ol>
+
+                    <h3>The Ethics of Persuasion</h3>
+                    <p>The boundary between acceptable persuasion and misleading representation seems to revolve around viewer agency - whether viewers are guided to a conclusion while retaining their ability to evaluate evidence, or whether key contextual information is omitted to prevent alternative interpretations. Techniques like selective emphasis (e.g., highlighting certain flows in the Sankey diagram) can be acceptable if the underlying data remains accurately represented. However, techniques that make causal claims beyond what the data supports (like the annotation in the second visualization suggesting complaints are "less credible") cross into misleading territory.</p>
+
+                    <h3>Power and Responsibility</h3>
+                    <p>This exercise demonstrates that the same data can tell dramatically different stories depending on design and framing choices. This power demands responsibility from visualization creators to:</p>
+                    <ul>
+                        <li>Present data honestly, even while making persuasive arguments</li>
+                        <li>Include necessary context that might challenge our preferred narrative</li>
+                        <li>Acknowledge the limitations and potential biases in our data and analysis</li>
+                        <li>Consider the real-world implications of how our visualizations might influence decision-making</li>
+                        <li>Empower viewers with the information they need to draw their own conclusions</li>
+                    </ul>
+
+                    <p> <br>In conclusion, while both visualizations show true statistics, neither fully meets these criteria for ethical presentation. The experience of creating them has reinforced that effective data visualization isn't just about technical skill or aesthetic appeal - it's about finding the balance between engaging presentation and ethical responsibility. As data scientists, we must constantly reflect on how our design choices shape understanding and influence decisions, especially when dealing with socially significant issues like those explored in this project.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p> 2025 Data Visualization Project </p>
+        </footer>
+    </div>
+
+    <script>
+        // Wait for the intro animation to complete
+        setTimeout(() => {
+            document.getElementById('main-content').classList.remove('content-hidden');
+            document.getElementById('main-content').classList.add('content-visible');
+        }, 2500);
+    </script>
     <script src="script.js"></script>
 </body>
 </html> 
